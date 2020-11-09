@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="qlBanHang" Class="DataClasses2DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-FMKHDML\SQLEXPRESS;Initial Catalog=qlBanHang;Integrated Security=True" SettingsObjectName="QuanLyBanHang.Properties.Settings" SettingsPropertyName="qlBanHangConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.chiTiet_HDBan" Member="chiTiet_HDBans">
+    <Type Name="chiTiet_HDBan">
+      <Column Name="MaHD" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaSP" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Giamgia" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ThanhTien" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="chiTiet_HDBan_HDBan" Member="HDBan" ThisKey="MaHD" OtherKey="MaHD" Type="HDBan" Cardinality="One" />
+      <Association Name="SanPham_chiTiet_HDBan" Member="SanPham" ThisKey="MaSP" OtherKey="MaSP" Type="SanPham" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SanPham" Member="SanPhams">
+    <Type Name="SanPham">
+      <Column Name="MaSP" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenSP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaDV" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="GiaNhap" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="GiaBan" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaNCC" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="SanPham_chiTiet_HDBan" Member="chiTiet_HDBans" ThisKey="MaSP" OtherKey="MaSP" Type="chiTiet_HDBan" />
+      <Association Name="DonVi_SanPham" Member="DonVi" ThisKey="MaDV" OtherKey="MaDV" Type="DonVi" IsForeignKey="true" />
+      <Association Name="NCC_SanPham" Member="NCC" ThisKey="MaNCC" OtherKey="MaNCC" Type="NCC" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DonVi" Member="DonVis">
+    <Type Name="DonVi">
+      <Column Name="MaDV" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenDV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="DonVi_SanPham" Member="SanPhams" ThisKey="MaDV" OtherKey="MaDV" Type="SanPham" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HDBan" Member="HDBans">
+    <Type Name="HDBan">
+      <Column Name="MaHD" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MaNV" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="TenKhachHang" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="chiTiet_HDBan_HDBan" Member="chiTiet_HDBan" ThisKey="MaHD" OtherKey="MaHD" Type="chiTiet_HDBan" IsForeignKey="true" />
+      <Association Name="NhanVien_HDBan" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NCC" Member="NCCs">
+    <Type Name="NCC">
+      <Column Name="MaNCC" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenNCC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoDienThoai" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="NCC_SanPham" Member="SanPhams" ThisKey="MaNCC" OtherKey="MaNCC" Type="SanPham" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhanVien" Member="NhanViens">
+    <Type Name="NhanVien">
+      <Column Name="MaNV" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenNhanVien" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoDienThoai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaQuyen" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Association Name="NhanVien_HDBan" Member="HDBans" ThisKey="MaNV" OtherKey="MaNV" Type="HDBan" />
+      <Association Name="Quyen_NhanVien" Member="Quyen" ThisKey="MaQuyen" OtherKey="MaQuyen" Type="Quyen" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Quyen" Member="Quyens">
+    <Type Name="Quyen">
+      <Column Name="MaQuyen" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenQuyen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Quyen_NhanVien" Member="NhanViens" ThisKey="MaQuyen" OtherKey="MaQuyen" Type="NhanVien" />
+    </Type>
+  </Table>
+</Database>
