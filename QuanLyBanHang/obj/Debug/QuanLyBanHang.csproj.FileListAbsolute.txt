@@ -10,3 +10,7 @@ C:\Users\NamLuu\source\repos\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang
 C:\Users\NamLuu\source\repos\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.pdb
 C:\Users\NamLuu\source\repos\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Admin.resources
 C:\Users\NamLuu\source\repos\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.frmNhanViencs.resources
+C:\Users\NamLuu\source\repos\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.ChiTietHoaDon.resources
+C:\Users\NamLuu\source\repos\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.CTHDNhap.resources
+C:\Users\NamLuu\source\repos\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.XemHD_Nhap.resources
+C:\Users\NamLuu\source\repos\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.CTHD_Ban.resources

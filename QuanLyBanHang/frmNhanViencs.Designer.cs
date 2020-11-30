@@ -102,6 +102,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             this.SuspendLayout();
             // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new System.Drawing.Point(27, 34);
+            label15.Name = "label15";
+            label15.Size = new System.Drawing.Size(83, 17);
+            label15.TabIndex = 22;
+            label15.Text = "Mã hóa đơn";
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -112,6 +121,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1123, 547);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -228,9 +238,9 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(531, 149);
+            this.textBox5.Location = new System.Drawing.Point(522, 149);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(326, 22);
+            this.textBox5.Size = new System.Drawing.Size(335, 22);
             this.textBox5.TabIndex = 13;
             // 
             // label7
@@ -244,6 +254,7 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(882, 20);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(211, 22);
@@ -563,15 +574,6 @@
             this.textBox14.Size = new System.Drawing.Size(211, 22);
             this.textBox14.TabIndex = 23;
             // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new System.Drawing.Point(27, 34);
-            label15.Name = "label15";
-            label15.Size = new System.Drawing.Size(83, 17);
-            label15.TabIndex = 22;
-            label15.Text = "Mã hóa đơn";
-            // 
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -691,6 +693,7 @@
             this.ClientSize = new System.Drawing.Size(1152, 571);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmNhanViencs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmNhanViencs";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
